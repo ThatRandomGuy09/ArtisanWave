@@ -42,6 +42,7 @@ const CursorChat = ({
 
           <div
             className="absolute left-2 top-5 bg-blue-500 px-4 py-2 text-sm leading-relaxed text-white rounded-[20px]"
+            onKeyUp={(e) => e.stopPropagation()}
             style={{
               borderRadius: 20,
             }}
