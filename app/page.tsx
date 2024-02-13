@@ -18,6 +18,7 @@ import {
   handleCanvasObjectModified,
   handleCanvasSelectionCreated,
   handleCanvasObjectScaling,
+  handlePathCreated,
 } from "@/lib/canvas";
 import { ActiveElement, Attributes } from "@/types/type";
 import { useMutation, useRedo, useStorage, useUndo } from "@/liveblocks.config";
@@ -176,6 +177,12 @@ export default function Page() {
     canvas.on("object:scaling", (options:any)=>{
       handleCanvasObjectScaling({
         options, setElementAttributes,
+      })
+    })
+
+    canvas.on("path:created", (options:any)=>{
+      handlePathCreated({
+        options, syncShapeInStorage,
       })
     })
 
