@@ -232,15 +232,15 @@ export default function Page() {
         }}
       />
       <section className="flex h-full flex-row">
-        <LeftSidebar allShapes={Array.from(canvasObjects)} />
-        <Live canvasRef={canvasRef} undo={undo} redo={redo} />
-        <RightSidebar
-        elementAttributes={elementAttributes}
+        <LeftSidebar elementAttributes={elementAttributes}
         setElementAttributes={setElementAttributes}
         fabricRef={fabricRef}
         isEditingRef={isEditingRef}
         activeObjectRef={activeObjectRef}
-        syncShapeInStorage={syncShapeInStorage}
+        syncShapeInStorage={syncShapeInStorage} /> 
+        <Live canvasRef={canvasRef} undo={undo} redo={redo} />
+        <RightSidebar
+        allShapes={Array.from(canvasObjects)}
         />
       </section>
     </main>
